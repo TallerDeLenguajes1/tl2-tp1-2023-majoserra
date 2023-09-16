@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\maria\\.nuget\\packages\\": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\maria\\OneDrive\\Escritorio\\TercerAño-SegundoCuatrimestre\\Taller de Lenguajes II\\tl2-tp1-2023-majoserra\\tl2-tp1-2023-majoserra.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Downloads\\tl2-tp1-2023-majoserra\\tl2-tp1-2023-majoserra.csproj",
       "projectName": "tl2-tp1-2023-majoserra",
-      "projectPath": "C:\\Users\\maria\\OneDrive\\Escritorio\\TercerAño-SegundoCuatrimestre\\Taller de Lenguajes II\\tl2-tp1-2023-majoserra\\tl2-tp1-2023-majoserra.csproj",
-      "packagesPath": "C:\\Users\\maria\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\maria\\OneDrive\\Escritorio\\TercerAño-SegundoCuatrimestre\\Taller de Lenguajes II\\tl2-tp1-2023-majoserra\\obj\\",
+      "projectPath": "C:\\Users\\user\\Downloads\\tl2-tp1-2023-majoserra\\tl2-tp1-2023-majoserra.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\user\\Downloads\\tl2-tp1-2023-majoserra\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\maria\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -59,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.305\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

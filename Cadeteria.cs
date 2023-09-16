@@ -8,6 +8,12 @@ public class Cadeteria
     private string telefono;
     private List<Cadete> ListaCadete = new List<Cadete>();
 
+    public Cadeteria(string nombre, string telefono, List<Cadete> ListaCadete)
+    {
+        this.nombre = nombre;
+        this.telefono = telefono;
+        this.ListaCadete = ListaCadete;
+    }
     public void AltaPedido(int idcad, int num, string obs, string nomb, string dir, string telef, string datos)
     {
         foreach (var cadete in ListaCadete)
@@ -40,10 +46,6 @@ public class Cadeteria
             if (cad.Id == id && cad.buscarPedido(pedido) != 1)
             {
                 cad.AgregarPedido(pedido);
-            }
-            else
-            {
-                Console.WriteLine("Cadete no existe");
             }
         }
     }

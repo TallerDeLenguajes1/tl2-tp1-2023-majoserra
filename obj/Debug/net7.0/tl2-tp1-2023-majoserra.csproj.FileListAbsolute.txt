@@ -13,3 +13,18 @@ C:\Users\maria\OneDrive\Escritorio\TercerAño-SegundoCuatrimestre\Taller de Leng
 C:\Users\maria\OneDrive\Escritorio\TercerAño-SegundoCuatrimestre\Taller de Lenguajes II\tl2-tp1-2023-majoserra\obj\Debug\net7.0\tl2-tp1-2023-majoserra.pdb
 C:\Users\maria\OneDrive\Escritorio\TercerAño-SegundoCuatrimestre\Taller de Lenguajes II\tl2-tp1-2023-majoserra\obj\Debug\net7.0\tl2-tp1-2023-majoserra.genruntimeconfig.cache
 C:\Users\maria\OneDrive\Escritorio\TercerAño-SegundoCuatrimestre\Taller de Lenguajes II\tl2-tp1-2023-majoserra\obj\Debug\net7.0\ref\tl2-tp1-2023-majoserra.dll
+C:\Users\user\Downloads\tl2-tp1-2023-majoserra\bin\Debug\net7.0\tl2-tp1-2023-majoserra.exe
+C:\Users\user\Downloads\tl2-tp1-2023-majoserra\bin\Debug\net7.0\tl2-tp1-2023-majoserra.deps.json
+C:\Users\user\Downloads\tl2-tp1-2023-majoserra\bin\Debug\net7.0\tl2-tp1-2023-majoserra.runtimeconfig.json
+C:\Users\user\Downloads\tl2-tp1-2023-majoserra\bin\Debug\net7.0\tl2-tp1-2023-majoserra.dll
+C:\Users\user\Downloads\tl2-tp1-2023-majoserra\bin\Debug\net7.0\tl2-tp1-2023-majoserra.pdb
+C:\Users\user\Downloads\tl2-tp1-2023-majoserra\obj\Debug\net7.0\tl2-tp1-2023-majoserra.csproj.AssemblyReference.cache
+C:\Users\user\Downloads\tl2-tp1-2023-majoserra\obj\Debug\net7.0\tl2-tp1-2023-majoserra.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Downloads\tl2-tp1-2023-majoserra\obj\Debug\net7.0\tl2-tp1-2023-majoserra.AssemblyInfoInputs.cache
+C:\Users\user\Downloads\tl2-tp1-2023-majoserra\obj\Debug\net7.0\tl2-tp1-2023-majoserra.AssemblyInfo.cs
+C:\Users\user\Downloads\tl2-tp1-2023-majoserra\obj\Debug\net7.0\tl2-tp1-2023-majoserra.csproj.CoreCompileInputs.cache
+C:\Users\user\Downloads\tl2-tp1-2023-majoserra\obj\Debug\net7.0\tl2-tp1-2023-majoserra.dll
+C:\Users\user\Downloads\tl2-tp1-2023-majoserra\obj\Debug\net7.0\refint\tl2-tp1-2023-majoserra.dll
+C:\Users\user\Downloads\tl2-tp1-2023-majoserra\obj\Debug\net7.0\tl2-tp1-2023-majoserra.pdb
+C:\Users\user\Downloads\tl2-tp1-2023-majoserra\obj\Debug\net7.0\tl2-tp1-2023-majoserra.genruntimeconfig.cache
+C:\Users\user\Downloads\tl2-tp1-2023-majoserra\obj\Debug\net7.0\ref\tl2-tp1-2023-majoserra.dll
