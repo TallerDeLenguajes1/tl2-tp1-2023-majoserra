@@ -8,12 +8,18 @@ public class Cadeteria
     private string telefono;
     private List<Cadete> ListaCadete = new List<Cadete>();
 
+    /*Agregar ListadoPedidos en la clase Cadeteria que contenga todo los pedidos que
+    se vayan generando.*/
+    private List<Pedido> listaPedido = new List<Pedido>();
+    public List<Pedido> ListaPedido { get => listaPedido; }
+
     public Cadeteria(string nombre, string telefono, List<Cadete> ListaCadete)
     {
         this.nombre = nombre;
         this.telefono = telefono;
         this.ListaCadete = ListaCadete;
     }
+
     public void AltaPedido(int idcad, int num, string obs, string nomb, string dir, string telef, string datos)
     {
         foreach (var cadete in ListaCadete)

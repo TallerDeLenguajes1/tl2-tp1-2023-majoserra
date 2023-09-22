@@ -7,9 +7,10 @@ public class Cadete
     private string direccion;
     private string telefono;
 
-    private List<Pedido> listaPedido = new List<Pedido>();
+    // Quitar el ListadoPedidos de la clase Cadete
 
-    public List<Pedido> ListaPedido { get => listaPedido; }
+
+
     public void MostrarCadete()
     {
         Console.WriteLine(id);
