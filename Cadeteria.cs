@@ -21,8 +21,8 @@ public class Cadeteria
             if (cadete.Id == idcad)
             {//reemplazar con metodos linq
                 Pedido pedido = new Pedido(num, obs, nomb, dir, telef, datos);
-                pedido.CambiarEstado();
                 cadete.AgregarPedido(pedido);
+                cadete.CambiarEstadoPedido(pedido.Numero, 1); //pedido aceptado
             }
         }
     }
@@ -39,15 +39,32 @@ public class Cadeteria
         ListaCadete.Add(cad);
     }
 
-    public void ReasignarPedido(Pedido pedido, int id)
+    public void ReasignarPedido(int id_Pedido, int id_CadeteNuevo)
     {
         foreach (Cadete cad in ListaCadete)
         {
-            if (cad.Id == id && cad.buscarPedido(pedido) != 1)
+            if (cad.buscarPedido(id_Pedido)) //el cadete tiene el pedido
             {
-                cad.AgregarPedido(pedido);
+                Pedido? pedido = cad.ListaPedido.FirstOrDefault(p => p.Numero == id_Pedido);
+                if (pedido != null)
+                {
+                    cad.ListaPedido.Remove(pedido);
+                    Cadete? cadNuevo = ListaCadete.FirstOrDefault(c => c.Id == id_CadeteNuevo);
+
+                    if (cadNuevo != null)
+                    {
+                        cadNuevo.ListaPedido.Add(pedido);
+                    }
+                    else
+                    {
+                        System.Console.WriteLine("El cadete No existe");
+                    }
+                }
+                else
+                {
+                    System.Console.WriteLine("El pedido que se quiere reasignar no existe");
+                }
             }
         }
     }
 }
-

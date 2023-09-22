@@ -10,32 +10,33 @@ public class Pedido
     private int idCad;
 
     public int IDcad { get => idCad; }
-    public int Estado { get => estado; }
+    public int Numero { get => numero; set => numero = value; }
+    public int Estado { get => estado; set => estado = value; }
 
     public void MostrarPedido()
     {
-        Console.WriteLine(numero);
+        Console.WriteLine(Numero);
         Console.WriteLine(observacion);
-        Console.WriteLine(estado);
+        Console.WriteLine(Estado);
         Console.WriteLine(idCad);
 
     }
     public Pedido(int num, string obs, string nomb, string dir, string telef, string datos)
     {
         cliente = new Cliente(nomb, dir, telef, datos);
-        numero = num;
+        Numero = num;
         observacion = obs;
-        estado = 0; //Pendiente
+        Estado = 0; //Pendiente
     }
     public void CambiarEstado()
     {
-        if (estado == 0)
+        if (Estado == 0)
         {
-            estado = 1;
+            Estado = 1;
         }
         else
         {
-            estado = 2;
+            Estado = 2;
         }
     }
     public void verDireccionCliente()

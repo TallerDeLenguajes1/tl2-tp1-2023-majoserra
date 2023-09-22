@@ -9,7 +9,7 @@ public class Cadete
 
     private List<Pedido> listaPedido = new List<Pedido>();
 
-
+    public List<Pedido> ListaPedido { get => listaPedido; }
     public void MostrarCadete()
     {
         Console.WriteLine(id);
@@ -32,47 +32,47 @@ public class Cadete
 
     public int Id { get => id; }
 
+
     public void AgregarPedido(Pedido pedido)
     {
-        listaPedido.Add(pedido);
+        ListaPedido.Add(pedido);
     }
 
-    public int buscarPedido(Pedido pedido)
+    public bool buscarPedido(int id)
     {
-        foreach (Pedido ped in listaPedido)
+        foreach (Pedido ped in ListaPedido)
         {
-            if (ped == pedido)
+            if (id == ped.Numero)
             {
-                return 1; //el pedido pertenece al cadete
+                return true; //el pedido pertenece al cadete
             }
         }
-        return 0;
+        return false;
     }
-    public void EntregarPedido(Pedido pedido)
+    public void CambiarEstadoPedido(int id_pedido, int estado)
     {
-        foreach (var ped in listaPedido)
+        Pedido? pedEncontrado = ListaPedido.FirstOrDefault(p => p.Numero == id_pedido);
+        if (pedEncontrado != null)
         {
-            if (ped == pedido)
+            pedEncontrado.Estado = estado;
+        }
+
+    }
+    public int EnviosEntregados()
+    {
+        int cantEnvios = 0;
+        foreach (var ped in ListaPedido)
+        {
+            if (ped.Estado == 2)
             {
-                listaPedido.Remove(pedido);
+                cantEnvios++;
             }
         }
+        return cantEnvios;
     }
     public float JornalACobrar()
     {
-        int cobrar = 0;
-        foreach (var pedido in listaPedido)
-        {
-            if (pedido.IDcad == id)
-            {
-                if (pedido.Estado == 2)
-                {
-                    cobrar++;
-                }
-            }
-
-        }
-        return cobrar * 500;
+        return EnviosEntregados() * 500;
     }
 
 }
