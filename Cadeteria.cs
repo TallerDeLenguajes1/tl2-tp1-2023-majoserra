@@ -13,30 +13,33 @@ public class Cadeteria
     private List<Pedido> listaPedido = new List<Pedido>();
     public List<Pedido> ListaPedido { get => listaPedido; }
 
+    //Constructor de Cadeteria
     public Cadeteria(string nombre, string telefono, List<Cadete> ListaCadete)
     {
         this.nombre = nombre;
         this.telefono = telefono;
         this.ListaCadete = ListaCadete;
     }
-
-    public void AltaPedido(int idcad, int num, string obs, string nomb, string dir, string telef, string datos)
+    // Aceptar un pedido y ponerlo en "Espera"
+    public void AceptarPedido(int num, string obs, string nomb, string dir, string telef, string datos)
     {
-        foreach (var cadete in ListaCadete)
-        {
-            if (cadete.Id == idcad)
-            {//reemplazar con metodos linq
-                Pedido pedido = new Pedido(num, obs, nomb, dir, telef, datos);
-                cadete.AgregarPedido(pedido);
-                cadete.CambiarEstadoPedido(pedido.Numero, 1); //pedido aceptado
-            }
-        }
+        Pedido pedido = new Pedido(num, obs, nomb, dir, telef, datos); //Creamos el pedido
+        listaPedido.Add(pedido); // Agregar los pedido a la Lista de Pedidos
     }
-    public void Mostrar()
+
+    // Asignar un Pedido a un Cadete 
+    /* Agregar el método AsignarCadeteAPedido en la clase Cadeteria que recibe como
+    parámetro el id del cadete y el id del Pedido*/
+    public void AsignarCadeteAPedido(int idcad, int id_pedido)
     {
-        foreach (var cad in ListaCadete)
+        Cadete? cadBuscado = ListaCadete.FirstOrDefault(cad => cad.Id == idcad);
+        if (cadBuscado != null)
         {
-            cad.MostrarCadete();
+            Pedido? pedBuscado = listaPedido.FirstOrDefault(p => p.Numero == id_pedido);
+            if (pedBuscado != null)
+            {
+                pedBuscado.Cadete = cadBuscado;
+            }
         }
     }
     public void CrearCadete(int id, string nomb, string dir, string telef)
@@ -47,30 +50,50 @@ public class Cadeteria
 
     public void ReasignarPedido(int id_Pedido, int id_CadeteNuevo)
     {
-        foreach (Cadete cad in ListaCadete)
+        Pedido? pedBuscado = listaPedido.FirstOrDefault(p => p.Cadete.Id == id_Pedido);
+        if (pedBuscado != null) // Si el pedido existe y es distinto de null 
         {
-            if (cad.buscarPedido(id_Pedido)) //el cadete tiene el pedido
+            Cadete? cadBuscado = ListaCadete.FirstOrDefault(cad => cad.Id == id_CadeteNuevo);
+            if (cadBuscado != null)
             {
-                Pedido? pedido = cad.ListaPedido.FirstOrDefault(p => p.Numero == id_Pedido);
-                if (pedido != null)
-                {
-                    cad.ListaPedido.Remove(pedido);
-                    Cadete? cadNuevo = ListaCadete.FirstOrDefault(c => c.Id == id_CadeteNuevo);
-
-                    if (cadNuevo != null)
-                    {
-                        cadNuevo.ListaPedido.Add(pedido);
-                    }
-                    else
-                    {
-                        System.Console.WriteLine("El cadete No existe");
-                    }
-                }
-                else
-                {
-                    System.Console.WriteLine("El pedido que se quiere reasignar no existe");
-                }
+                pedBuscado.Cadete = cadBuscado;
+            }
+            else
+            {
+                System.Console.WriteLine("El cadete No existe");
             }
         }
+        else
+        {
+            System.Console.WriteLine("El pedido que se quiere reasignar no existe");
+        }
+    }
+
+    public void CambiarEstadoPedido(int id_pedido, int estado)
+    {
+        Pedido? pedEncontrado = ListaPedido.FirstOrDefault(p => p.Numero == id_pedido);
+        if (pedEncontrado != null)
+        {
+            pedEncontrado.Estado = estado;
+        }
+    }
+    public int EnviosEntregados(int id_cad)
+    {
+        int cantEnvios = 0;
+
+        foreach (var ped in listaPedido)
+        {
+            if (ped.Cadete.Id == id_cad && ped.Estado == 2)//controlamos que los cadetes de esos pedidos sean los mismos y el estado sea 2 (Entregado)
+            {
+                cantEnvios++;
+            }
+        }
+        return cantEnvios;
+    }
+    // Agregar el método JornalACobrar en la clase Cadeteria que recibe como parámetro el id del cadete y devuelve el monto a cobrar para dicho cadete
+
+    public float JornalACobrar(int id_cad)
+    {
+        return EnviosEntregados(id_cad) * 500;
     }
 }

@@ -3,13 +3,13 @@ namespace EspacioInforme
 {
     public class Informe
     {
-        public void CobroDeCadete(Cadete cad)
+        public void CobroDeCadete(Cadeteria cade)
         {
-            Console.WriteLine("Monto Ganado: " + cad.JornalACobrar());
+            Console.WriteLine("Monto Ganado: " + cade.JornalACobrar(cade.));
         }
         public void CantidadEnviosCadete(Cadete cad)
         {
-            Console.WriteLine("Cantidad de Envios de cadete " + cad.Id + " : " + cad.EnviosEntregados());
+            Console.WriteLine("Cantidad de Envios de cadete " + cad.Id + " : " + cad.EnviosEntregados(cad.Id));
         }
     }
 

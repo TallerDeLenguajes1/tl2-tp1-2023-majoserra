@@ -32,48 +32,22 @@ public class Cadete
     }
 
     public int Id { get => id; }
+    // public void AgregarPedido(Pedido pedido)
+    // {
+    //     ListaPedido.Add(pedido);
+    // }
 
+    // public bool buscarPedido(int id)
+    // {
+    //     foreach (Pedido ped in ListaPedido)
+    //     {
+    //         if (id == ped.Numero)
+    //         {
+    //             return true; //el pedido pertenece al cadete
+    //         }
+    //     }
+    //     return false;
+    // }
 
-    public void AgregarPedido(Pedido pedido)
-    {
-        ListaPedido.Add(pedido);
-    }
-
-    public bool buscarPedido(int id)
-    {
-        foreach (Pedido ped in ListaPedido)
-        {
-            if (id == ped.Numero)
-            {
-                return true; //el pedido pertenece al cadete
-            }
-        }
-        return false;
-    }
-    public void CambiarEstadoPedido(int id_pedido, int estado)
-    {
-        Pedido? pedEncontrado = ListaPedido.FirstOrDefault(p => p.Numero == id_pedido);
-        if (pedEncontrado != null)
-        {
-            pedEncontrado.Estado = estado;
-        }
-
-    }
-    public int EnviosEntregados()
-    {
-        int cantEnvios = 0;
-        foreach (var ped in ListaPedido)
-        {
-            if (ped.Estado == 2)
-            {
-                cantEnvios++;
-            }
-        }
-        return cantEnvios;
-    }
-    public float JornalACobrar()
-    {
-        return EnviosEntregados() * 500;
-    }
 
 }

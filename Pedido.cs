@@ -9,6 +9,7 @@ public class Pedido
     private Cadete cadete; //Agregar una referencia a Cadete dentro de la clase Pedido
     public int Numero { get => numero; set => numero = value; }
     public int Estado { get => estado; set => estado = value; }
+    public Cadete Cadete { get => cadete; set => cadete = value; }
 
     // public void MostrarPedido()
     // {
