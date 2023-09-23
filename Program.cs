@@ -76,7 +76,7 @@ internal class Program
                     info.CobroDeCadete(cadeteria, id_cad);
                 break;
                 case 6:
-                    Console.WriteLine("           LISTA PEDIDOS          ");
+                    Console.WriteLine("           LISTA PEDIDOS         \n ");
                     foreach (var ped in cadeteria.ListaPedido)
                     {
                         ped.MostrarPedido(); //Mostramos todos los pedidos 

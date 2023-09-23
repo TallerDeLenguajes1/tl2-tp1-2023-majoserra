@@ -39,7 +39,12 @@ public class Cadeteria
             if (pedBuscado != null)
             {
                 pedBuscado.Cadete = cadBuscado;
+            }else{
+                Console.WriteLine("El pedido que quieres asignar no Existe");
             }
+        }else
+        {
+            Console.WriteLine("El cadete no existe :(");
         }
     }
     public void CrearCadete(int id, string nomb, string dir, string telef)
