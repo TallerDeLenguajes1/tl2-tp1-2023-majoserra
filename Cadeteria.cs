@@ -50,7 +50,7 @@ public class Cadeteria
 
     public void ReasignarPedido(int id_Pedido, int id_CadeteNuevo)
     {
-        Pedido? pedBuscado = listaPedido.FirstOrDefault(p => p.Cadete.Id == id_Pedido);
+        Pedido? pedBuscado = listaPedido.FirstOrDefault(p => p.Numero == id_Pedido);
         if (pedBuscado != null) // Si el pedido existe y es distinto de null 
         {
             Cadete? cadBuscado = ListaCadete.FirstOrDefault(cad => cad.Id == id_CadeteNuevo);
@@ -69,7 +69,7 @@ public class Cadeteria
         }
     }
 
-    public void CambiarEstadoPedido(int id_pedido, int estado)
+    public void CambiarEstadoPedido(int id_pedido, int estado) //FAlTA controlar que el pedido tenga un cadete asociado
     {
         Pedido? pedEncontrado = ListaPedido.FirstOrDefault(p => p.Numero == id_pedido);
         if (pedEncontrado != null)
@@ -83,9 +83,12 @@ public class Cadeteria
 
         foreach (var ped in listaPedido)
         {
-            if (ped.Cadete.Id == id_cad && ped.Estado == 2)//controlamos que los cadetes de esos pedidos sean los mismos y el estado sea 2 (Entregado)
+            if (ped.Cadete!=null)//controlamos que los cadetes de esos pedidos sean los mismos y el estado sea 2 (Entregado)
             {
-                cantEnvios++;
+                if (ped.Cadete.Id== id_cad && ped.Estado == 2)
+                {
+                    cantEnvios++;
+                }   
             }
         }
         return cantEnvios;

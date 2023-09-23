@@ -6,7 +6,7 @@ public class Pedido
     private string observacion;
     private Cliente cliente;
     private int estado;
-    private Cadete cadete; //Agregar una referencia a Cadete dentro de la clase Pedido
+    private Cadete? cadete; //Agregar una referencia a Cadete dentro de la clase Pedido
     public int Numero { get => numero; set => numero = value; }
     public int Estado { get => estado; set => estado = value; }
     public Cadete Cadete { get => cadete; set => cadete = value; }
@@ -25,6 +25,18 @@ public class Pedido
         Numero = num;
         observacion = obs;
         Estado = 0; //Pendiente
+        cadete = null;
+    }
+    public void MostrarPedido(){
+        Console.WriteLine("---------Pedido ["+Numero+"]---------");
+        Console.WriteLine("Numero Pedido: "+Numero);
+        Console.WriteLine("Observacion: "+observacion);
+        Console.WriteLine("Estado: "+estado);
+        Console.WriteLine("Cliente: "+cliente.Nombre);
+        Console.WriteLine("Direccion cliente: "+cliente.Direccion);
+        Console.WriteLine("Telefono Cliente: "+cliente.Telefono);
+        Console.WriteLine("Datos De Referencia: "+cliente.DatosReferencia);
+
     }
     public void verDireccionCliente()
     {
