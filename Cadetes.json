@@ -1,6 +1,26 @@
 [
-    {"id":"0","nombre":"Pichi","direccion":"Av colon 3456","telefono":"38159640"},
-    {"id":"1","nombre":"majo","direccion":"Colombres 123","telefono":"381456754"},
-    {"id":"2","nombre":"Jacob","direccion":"San Juan 876","telefono":"381346976"},
-    {"id":"3","nombre":"Cuchi","direccion":"Juan B justo 399","telefono":"381737492"}
+    {
+        "Id": 0,
+        "Nombre":"Pichi",
+        "Direccion":"Av colon 3456",
+        "Telefono":"38159640"
+    },
+    {
+        "Id": 1,
+        "Nombre":"majo",
+        "Direccion":"Colombres 123",
+        "Telefono":"381456754"
+    },
+    {
+        "Id": 2,
+        "Nombre":"Jacob",
+        "Direccion":"San Juan 876",
+        "Telefono":"381346976"
+    },
+    {
+        "Id": 3,
+        "Nombre":"Cuchi",
+        "Direccion":"Juan B justo 399",
+        "Telefono":"381737492"
+    }
 ]

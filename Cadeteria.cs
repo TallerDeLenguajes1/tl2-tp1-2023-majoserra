@@ -4,21 +4,30 @@ namespace EspacioPedido;
 
 public class Cadeteria
 {
-    private string nombre;
-    private string telefono;
+    private string? nombre;
+    private string? telefono;
     private List<Cadete> ListaCadete = new List<Cadete>();
 
     /*Agregar ListadoPedidos en la clase Cadeteria que contenga todo los pedidos que
     se vayan generando.*/
     private List<Pedido> listaPedido = new List<Pedido>();
     public List<Pedido> ListaPedido { get => listaPedido; }
+    public string? Nombre { get => nombre; set => nombre = value; }
+    public string? Telefono { get => telefono; set => telefono = value; }
+
 
     //Constructor de Cadeteria
-    public Cadeteria(string nombre, string telefono, List<Cadete> ListaCadete)
+    public Cadeteria(){
+
+    }
+    public Cadeteria(string nombre, string telefono)
     {
         this.nombre = nombre;
         this.telefono = telefono;
-        this.ListaCadete = ListaCadete;
+
+    }
+    public void AgregarCadetes(List<Cadete> Lista){
+        ListaCadete = Lista;
     }
     // Aceptar un pedido y ponerlo en "Espera"
     public void AceptarPedido(int num, string obs, string nomb, string dir, string telef, string datos)

@@ -8,30 +8,23 @@ public class Cadete
     private string telefono;
 
     // Quitar el ListadoPedidos de la clase Cadete
+    public Cadete(){
 
-
-
-    public void MostrarCadete()
-    {
-        Console.WriteLine(id);
-        Console.WriteLine(nombre);
-        Console.WriteLine(direccion);
-        Console.WriteLine(telefono);
-        // foreach (var ped in listaPedido)
-        // {
-        //     ped.MostrarPedido();
-        // }
     }
-
-    public Cadete(int id, string nom, string dir, string telef)
+    public Cadete(int id, string nombre, string direccion, string telefono)
     {
         this.id = id;
-        nombre = nom;
-        direccion = dir;
-        telefono = telef;
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.telefono = telefono;
     }
 
-    public int Id { get => id; }
+    public int Id { get => id; set => id = value; }
+    public string Nombre { get => nombre; set => nombre = value; }
+    public string Direccion { get => direccion; set => direccion = value; }
+    public string Telefono { get => telefono; set => telefono = value; }
+
+
     // public void AgregarPedido(Pedido pedido)
     // {
     //     ListaPedido.Add(pedido);
