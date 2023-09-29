@@ -1,7 +1,6 @@
 ﻿using EspacioPedido;
 using EspacioInforme;
 //using LectorCSV;
-using EspacioMensajes;
 using EspacioAccesoADatos;
 internal class Program
 {
@@ -49,10 +48,12 @@ internal class Program
             
             Informe info = new Informe(); //Instanciamos informe
             int iteracion = 1;
-            Mensaje msj = new Mensaje();
+            
             while (iteracion != 0)
             {
-                msj.Menu();
+                Console.WriteLine("----------Menu-----------");
+                System.Console.WriteLine("1.-Aceptar Pedido \n\r2.-Asignar pedido a Cadete \n\r3.-Envios por Cadete \n\r4.-Reasignar Pedido \n\r5.-Jornal a Cobrar \n\r6.-Listar Pedidos \n\r7.-Cambiar Estado Pedido");
+                System.Console.WriteLine("Ingrese una Opcion: ");
                 int opcion;
                 int.TryParse(Console.ReadLine(), out opcion);
                 switch (opcion)
@@ -85,7 +86,8 @@ internal class Program
                     case 3: // Envios por Cadete
                         Console.WriteLine("----Envios por Cadete---- \n\rIngrese el id del cadete: ");
                         int.TryParse(Console.ReadLine(), out id_cad);
-                        info.CantidadEnviosCadete(cadeteria, id_cad);
+                        int envios = info.CantidadEnviosCadete(cadeteria, id_cad);
+                        Console.WriteLine("La cantidad de Envios por cadete es: "+envios);
                     break;
                     case 4: // Reasignar pedido 
                         Console.WriteLine("Ingrese el Id del Cadete: ");
@@ -97,13 +99,21 @@ internal class Program
                     case 5: // jornal a cobrar x cadete
                         Console.WriteLine("----JORNAL A COBRAR---- \n\rIngrese el id del cadete: ");
                         int.TryParse(Console.ReadLine(), out id_cad);
-                        info.CobroDeCadete(cadeteria, id_cad);
+                        float cobro = info.CobroDeCadete(cadeteria, id_cad);
+                        Console.WriteLine("El jornal a cobrar del cadete es: "+cobro);
                     break;
                     case 6:
                         Console.WriteLine("           LISTA PEDIDOS         \n ");
                         foreach (var ped in cadeteria.ListaPedido)
                         {
-                            ped.MostrarPedido(); //Mostramos todos los pedidos 
+                            Console.WriteLine("---------Pedido ["+ped.Numero+"]---------");
+                            Console.WriteLine("Numero Pedido: "+ped.Numero);
+                           // Console.WriteLine("Observacion: "+ped.observacion);
+                           // Console.WriteLine("Estado: "+ped.Estado);
+                           // Console.WriteLine("Cliente: "+ped.cliente.Nombre);
+                           // Console.WriteLine("Direccion cliente: "+cliente.Direccion);
+                           // Console.WriteLine("Telefono Cliente: "+cliente.Telefono);
+                           // Console.WriteLine("Datos De Referencia: "+cliente.DatosReferencia);
                         }
                     break;
                     case 7: // Cambiar estado pedido
@@ -112,7 +122,7 @@ internal class Program
                         Console.WriteLine("Ingrese el Nuevo Estado (2=Entregado): ");
                         int estad;
                         int.TryParse(Console.ReadLine(), out estad);
-                        cadeteria.CambiarEstadoPedido(id_ped, estad);
+                        
                     break;
                 }
                 Console.WriteLine("Quiere Seguir Operando? (1=SI) (0=NO)");

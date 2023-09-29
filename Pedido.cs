@@ -27,26 +27,16 @@ public class Pedido
         Estado = 0; //Pendiente
         cadete = null;
     }
-    public void MostrarPedido(){
-        Console.WriteLine("---------Pedido ["+Numero+"]---------");
-        Console.WriteLine("Numero Pedido: "+Numero);
-        Console.WriteLine("Observacion: "+observacion);
-        Console.WriteLine("Estado: "+estado);
-        Console.WriteLine("Cliente: "+cliente.Nombre);
-        Console.WriteLine("Direccion cliente: "+cliente.Direccion);
-        Console.WriteLine("Telefono Cliente: "+cliente.Telefono);
-        Console.WriteLine("Datos De Referencia: "+cliente.DatosReferencia);
-
-    }
-    public void verDireccionCliente()
+    
+    public string verDireccionCliente()
     {
-        Console.WriteLine(cliente.Direccion);
+        return cliente.Direccion;
     }
-    public void verDatosCliente()
-    {
-        Console.WriteLine(cliente.Nombre);
-        Console.WriteLine(cliente.Direccion);
-        Console.WriteLine(cliente.Telefono);
-        Console.WriteLine(cliente.DatosReferencia);
-    }
+    // public void verDatosCliente()
+    // {
+    //     Console.WriteLine(cliente.Nombre);
+    //     Console.WriteLine(cliente.Direccion);
+    //     Console.WriteLine(cliente.Telefono);
+    //     Console.WriteLine(cliente.DatosReferencia);
+    // }
 }

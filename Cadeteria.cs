@@ -48,13 +48,13 @@ public class Cadeteria
             if (pedBuscado != null)
             {
                 pedBuscado.Cadete = cadBuscado;
-            }else{
+            }/*else{
                 Console.WriteLine("El pedido que quieres asignar no Existe");
-            }
-        }else
+            }*/
+        }/*else
         {
             Console.WriteLine("El cadete no existe :(");
-        }
+        }*/
     }
     public void CrearCadete(int id, string nomb, string dir, string telef)
     {
@@ -72,15 +72,15 @@ public class Cadeteria
             {
                 pedBuscado.Cadete = cadBuscado;
             }
-            else
+            /*else
             {
                 System.Console.WriteLine("El cadete No existe");
-            }
-        }
+            }*/
+        }/*
         else
         {
             System.Console.WriteLine("El pedido que se quiere reasignar no existe");
-        }
+        }*/
     }
 
     public void CambiarEstadoPedido(int id_pedido, int estado) //FAlTA controlar que el pedido tenga un cadete asociado
